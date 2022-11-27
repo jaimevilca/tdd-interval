@@ -72,5 +72,13 @@ public class IntervalTest {
     Interval childInterval = new IntervalBuilder().open(left.getEquals()).closed(right.getEquals()).build();
     assertTrue(parentInterval.include(childInterval));
   }
+  @Test
+  public void givenIntervalWhenNotIncludeIntervalThenFalse() {
+    Interval parentInterval = new IntervalBuilder().open(left.getEquals()).closed(left.getEquals()).build();
+    Interval childInterval = new IntervalBuilder().open(right.getEquals()).closed(right.getEquals()).build();
+    assertFalse(parentInterval.include(childInterval));
+  }
+
+
 
 }
