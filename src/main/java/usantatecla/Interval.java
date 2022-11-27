@@ -15,7 +15,16 @@ public class Interval {
 			return this.min.isWithin(value) && this.max.isWithin(value);
 	}
 	public boolean include(Interval interval) {
-			return true;
+		return this.min.isWithin(interval.getMinValue()) && this.max.isWithin(interval.getMaxValue());
+	}
+
+
+	public double getMinValue() {
+		return min.getValue();
+	}
+
+	public double getMaxValue() {
+		return max.getValue();
 	}
 
 	@Override
