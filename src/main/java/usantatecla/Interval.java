@@ -14,6 +14,9 @@ public class Interval {
 	public boolean include(double value) {
 			return this.min.isWithin(value) && this.max.isWithin(value);
 	}
+	public boolean include(Interval interval) {
+			return true;
+	}
 
 	@Override
 	public int hashCode() {
